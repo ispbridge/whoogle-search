@@ -56,12 +56,12 @@
         </style>
     </noscript>
     <style>{{ config.style }}</style>
-    <title>Whoogle Search</title>
+    <title>ISP Bridge Search</title>
 </head>
 <body id="main">
 <div class="search-container">
     <div class="logo-container">
-        {{ logo|safe }}
+          ISP Bridge
     </div>
     <form id="search-form" action="search" method="{{ 'get' if config.get_only else 'post' }}">
         <div class="search-fields">
@@ -78,7 +78,7 @@
                         autocapitalize="none"
                         spellcheck="false"
                         autocorrect="off"
-                        autocomplete="off"
+                        autocomplete="on"
                         dir="auto">
             </div>
             <input type="submit" id="search-submit" value="{{ translation['search'] }}">
@@ -193,11 +193,6 @@
                                 {% endfor %}
                             </select>
                         </div>
-                        <!-- DEPRECATED -->
-                        <!--<div class="config-div config-div-dark">-->
-                        <!--<label for="config-dark">{{ translation['config-dark'] }}: </label>-->
-                        <!--<input type="checkbox" name="dark" id="config-dark" {{ 'checked' if config.dark else '' }}>-->
-                        <!--</div>-->
                         <div class="config-div config-div-safe">
                             <label for="config-safe">{{ translation['config-safe'] }}: </label>
                             <input type="checkbox" name="safe" id="config-safe" {{ 'checked' if config.safe else '' }}>
